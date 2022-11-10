@@ -3,11 +3,12 @@ import {Box, Grid, Typography} from "@mui/material";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Home.module.css";
-import {GoverningData,mainOne} from './data'
+import {mainOne} from './data'
+import GoverningData from './data';
 const governData = GoverningData;
 
 const GoverningBody = () => {
-    console.log(mainOne);
+    console.log(GoverningData);
     return (
         <div className={styles.container}>
             <Header/>

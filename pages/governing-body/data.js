@@ -1,4 +1,4 @@
-export const GoverningData = [
+ const GoverningData = [
     {id:2,imageSrc:"https://d3or5urpu0oqw6.cloudfront.net/images/message_images/CfETDltAMpqQBEljH5KcRsLsndsmZifugpprelDs.jpeg",name:"ফাওজিয়া রাশেদী",position:"অধ্যক্ষ",shortDescription:"অধ্যক্ষ\n" +
             "ও\n" +
             "সদস্য সচিব, গভর্নিং বডি"},
@@ -10,3 +10,4 @@ export const GoverningData = [
 ]
 export const mainOne = {id:1,imageSrc:"https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/wFQagj9fPKTLtV8QgCmRjw1OhfK3LWd2zZ98UMz5.jpg",name:"আবু হেনা মোরশেদ জামান",position:"সভাপতি",shortDescription:"সচিব \n" +
         "বাস্তবায়ন পরিবীক্ষণ ও মূল্যায়ন বিভাগ (আইএমইডি), পরিকল্পনা মন্ত্রণালয়।"};
+export default GoverningData;
