@@ -1,4 +1,3 @@
-import HomeCard from "../../components/HomeCard";
 import {Box, Grid, Typography} from "@mui/material";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
