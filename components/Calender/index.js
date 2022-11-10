@@ -6,21 +6,6 @@ import events from "./events";
 
 const Calender = ()=>{
     return (
-        // <FullCalendar
-        //     defaultView="dayGridMonth"
-        //     header={{
-        //         left: "prev,next",
-        //         center: "title",
-        //         right: "dayGridMonth,timeGridWeek,timeGridDay"
-        //     }}
-        //     themeSystem="Simplex"
-        //     plugins={[dayGridPlugin]}
-        //     events={events}
-        // />
-        // <FullCalendar
-        //     plugins={[ dayGridPlugin ]}
-        //     initialView="dayGridMonth"
-        // />
         <div>
             <Calendar
                 localizer={localizer}
