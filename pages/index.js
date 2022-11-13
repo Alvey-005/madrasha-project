@@ -10,11 +10,26 @@ import {Box, Grid, Typography} from "@mui/material";
 import Calender from "../components/Calender";
 import PhotoGallery from "../components/PhotoGallery";
 import Map from '../components/Map';
+import {useEffect} from "react";
 const location = {
     address: '1600 Amphitheatre Parkway, Mountain View, california.',
     lat: 38.8951,
     lng: -77.0364,
 }
+// export const getStaticProps = async () => {
+//
+//     // Fetching data from jsonplaceholder.
+//     const res = await fetch(
+//         '/api/notice');
+//     let allAlbums = await res.json();
+//
+//     // Sending fetched data to the page component via props.
+//     return {
+//         props: {
+//             allAlbums: allAlbums.map((album) => album.title)
+//         }
+//     }
+// }
 
 export default function Home() {
     return (

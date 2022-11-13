@@ -9,6 +9,8 @@ import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 // Client-side cache shared for the whole session 
 // of the user in the browser.

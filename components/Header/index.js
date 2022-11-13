@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     AppBar,
     Box,
@@ -12,7 +12,6 @@ import {
     ListItemText, Toolbar, IconButton, Button
 } from "@mui/material";
 import Image from 'next/image'
-import AcUnitIcon from '@mui/icons-material/AcUnit';
 import MdPhone from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import logo1 from '../../public/images/logo1.jpg'
@@ -26,28 +25,31 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const drawerWidth = 240;
 // const navItems = ['Home', 'About', 'Contact', 'Help', 'Notice', 'Governing-body', 'Teacher', 'Student'];
+
 const navItems = [
-    {id:1,name:"Home",link:"/"},
-    {id:2,name:"About",link:"about-us"},
-    {id:3,name:"Contact",link:"contact"},
-    {id:4,name:"Presidents-talk",link:"principal-lecture"},
-    {id:5,name:"Notice",link:"notice"},
-    {id:6,name:"Governing-body",link:"governing-body"},
-    {id:7,name:"Teachers",link:"teachers"},
-    {id:8,name:"Student",link:"students"},
+    {id: 1, name: "Home", link: "/"},
+    {id: 2, name: "About", link: "about-us"},
+    {id: 3, name: "Contact", link: "contact"},
+    {id: 4, name: "Presidents-talk", link: "principal-lecture"},
+    {id: 5, name: "Notice", link: "notice"},
+    {id: 6, name: "Governing-body", link: "governing-body"},
+    {id: 7, name: "Teachers", link: "teachers"},
+    {id: 8, name: "Student", link: "students"},
 ]
 const homeData = {
-    name:"Abu Taher Dakhil Madrasah",
-    banglaName:"আবু তাহের দাখেলিয়া মাদ্রাসা",
-    email:"iscm@gmail.com",
-    phone:"48310177",
-    slogan:"শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
+    name: "Abu Taher Dakhil Madrasah",
+    banglaName: "আবু তাহের দাখেলিয়া মাদ্রাসা",
+    email: "iscm@gmail.com",
+    phone: "48310177",
+    slogan: "শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
 }
 const Header = (props) => {
+
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('sm'));
     const {window} = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [notices, setNotices] = useState([]);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -59,7 +61,7 @@ const Header = (props) => {
             <Divider/>
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item.id} disablePadding>
                         <ListItemButton sx={{textAlign: 'center'}}>
                             <ListItemText>
                                 <Link href={item.link}>
@@ -73,6 +75,14 @@ const Header = (props) => {
         </Box>
     );
     const container = window !== undefined ? () => window().document.body : undefined;
+    useEffect(() => {
+        fetch('/api/notice')
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                setNotices(data);
+            })
+    }, [])
     return (
         <header>
             <AppBar position='static'>
@@ -112,7 +122,6 @@ const Header = (props) => {
 
                     </Grid>
                     {/*</Box>*/}
-
                 </Box>
                 <Toolbar
                     style={{display: "flex", justifyContent: `${matches ? "center" : "end"}`}}
@@ -128,7 +137,7 @@ const Header = (props) => {
                     </IconButton>
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{color: '#fff'}}>
+                            <Button key={item.id} sx={{color: '#fff'}}>
                                 <Link href={item.link}><a style={{color: '#fff'}}>{item.name}</a></Link>
                             </Button>
                         ))}
@@ -153,12 +162,12 @@ const Header = (props) => {
                 </Box>
                 <Box sx={{background: "white"}}>
                     <Marquee speed={40}>
-                        <AcUnitIcon/> <Link href="/"><a style={{color: 'red', margin: "0 1rem"}}> Help</a></Link>
-                        <AcUnitIcon/>
-                        <AcUnitIcon/> <Link href="/"><a style={{color: 'red', margin: "0 1rem"}}> Help</a></Link>
-                        <AcUnitIcon/>
-                        <AcUnitIcon/> <Link href="/"><a style={{color: 'red', margin: "0 1rem"}}> Help</a></Link>
-                        <AcUnitIcon/>
+                        {
+                            Object.keys(notices)?.map((key,index)=>(
+                                <Link key={notices[key].id} href={notices[key].slug}><a style={{color: 'red', margin: "0 1rem"}}> {notices[key].title}</a></Link>
+                            ))
+                        }
+
                     </Marquee>
                 </Box>
 
