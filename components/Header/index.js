@@ -79,8 +79,10 @@ const Header = (props) => {
         fetch('/api/notice')
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
-                setNotices(data);
+                if(Object.keys(data).find((key)=>key==='data')){
+                }else{
+                    setNotices(data);
+                }
             })
     }, [])
     return (
