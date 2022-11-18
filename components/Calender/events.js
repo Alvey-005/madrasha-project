@@ -1,5 +1,5 @@
 const events = [
-    { title: "All Day Event", start: getDate("YEAR-MONTH-01") },
+    {title: "All Day Event", start: getDate("YEAR-MONTH-01")},
     {
         title: "Long Event",
         start: getDate("YEAR-MONTH-07"),
@@ -25,11 +25,11 @@ const events = [
         start: getDate("YEAR-MONTH-18T10:30:00+00:00"),
         end: getDate("YEAR-MONTH-18T12:30:00+00:00")
     },
-    { title: "Lunch", start: getDate("YEAR-MONTH-18T12:00:00+00:00") },
-    { title: "Birthday Party", start: getDate("YEAR-MONTH-19T07:00:00+00:00") },
-    { title: "Meeting", start: getDate("YEAR-MONTH-18T14:30:00+00:00") },
-    { title: "Happy Hour", start: getDate("YEAR-MONTH-18T17:30:00+00:00") },
-    { title: "Dinner", start: getDate("YEAR-MONTH-18T20:00:00+00:00") }
+    {title: "Lunch", start: getDate("YEAR-MONTH-1T12:00:00+00:00")},
+    {title: "Birthday Party", start: getDate("YEAR-MONTH-19T07:00:00+00:00")},
+    {title: "Meeting", start: '2022-12-18T12:00:00+00:00'},
+    {title: "Happy Hour", start: getDate("YEAR-MONTH-18T17:30:00+00:00")},
+    {title: "Dinner", start: getDate("YEAR-MONTH-18T20:00:00+00:00")}
 ];
 
 function getDate(dayString) {

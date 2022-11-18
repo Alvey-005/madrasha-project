@@ -1,7 +1,6 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import Link from "next/link";
-import {Box} from "@mui/material";
 const usefulLinks = [
     {id:1,name:"Main Home",link:"/"},
     {id:2,name:"Education Board",link:"http://www.educationboard.gov.bd/"},
@@ -87,18 +86,16 @@ export default function Footer() {
                             <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                             <p>
                                 <MDBIcon icon="home" className="me-2" />
-                                New York, NY 10012, US
-                            </p>
+                                ডাকঘর: ভেন্নাতলা, উপজেলা: শিবচর, জেলা: মাদারীপুর।                             </p>
                             <p>
                                 <MDBIcon icon="envelope" className="me-3" />
-                                info@example.com
-                            </p>
+                                m110874ict@gmail.com                            </p>
                             <p>
-                                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                                <MDBIcon icon="phone" className="me-3" /> 01309110874
                             </p>
-                            <p>
-                                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
-                            </p>
+                            {/*<p>*/}
+                            {/*    <MDBIcon icon="print" className="me-3" /> + 01 234 567 89*/}
+                            {/*</p>*/}
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>

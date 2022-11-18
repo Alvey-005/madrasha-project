@@ -28,19 +28,21 @@ const drawerWidth = 240;
 
 const navItems = [
     {id: 1, name: "Home", link: "/"},
-    {id: 2, name: "About", link: "about-us"},
-    {id: 3, name: "Contact", link: "contact"},
-    {id: 4, name: "Presidents-talk", link: "principal-lecture"},
+    // {id: 2, name: "About", link: "about-us"},
+    {id: 2, name: "ইতিহাস", link: "history"},
+    // {id: 3, name: "Contact", link: "contact"},
+    {id: 4, name: "সভাপতির বাণী", link: "principal-lecture"},
+    {id: 9, name: "প্রতিষ্ঠান প্রধানের বাণী", link: "president-talk"},
     {id: 5, name: "Notice", link: "notice"},
-    {id: 6, name: "Governing-body", link: "governing-body"},
-    {id: 7, name: "Teachers", link: "teachers"},
-    {id: 8, name: "Student", link: "students"},
+    {id: 6, name: "ম্যানেজিং কমিটি", link: "governing-body"},
+    {id: 7, name: "শিক্ষক", link: "teachers"},
+    {id: 8, name: "শিক্ষার্থী", link: "students"},
 ]
 const homeData = {
     name: "Abu Taher Dakhil Madrasah",
     banglaName: "আবু তাহের দাখেলিয়া মাদ্রাসা",
-    email: "iscm@gmail.com",
-    phone: "48310177",
+    email: "m110874ict@gmail.com",
+    phone: "01309110874",
     slogan: "শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
 }
 const Header = (props) => {

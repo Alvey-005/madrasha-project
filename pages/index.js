@@ -9,16 +9,18 @@ import HomeCard from "../components/HomeCard";
 import {Box, Grid, Typography} from "@mui/material";
 import Calender from "../components/Calender";
 import PhotoGallery from "../components/PhotoGallery";
+// import  ABUL_KALAM_HUJUR from "../assets/img/ABUL_KALAM_HUJUR.webp"
+import ABUL_KALAM_HUJUR from "../public/images/ABUL KALAM HUJUR.jpg"
+
 export default function Home() {
     return (
-        <div className={styles.container}>
+        <>
             <Head>
-                <title>Create Next App</title>
+                <title>Home</title>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
             <main>
-                <Header/>
                 <Box>
                     <SimpleSlider/>
                 </Box>
@@ -27,24 +29,28 @@ export default function Home() {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={4}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
-                            <HomeCard imageSrc="https://d3or5urpu0oqw6.cloudfront.net/images/message_images/y8K0bkDf9kFXNdMmIRDOavMRxAaAGXfrOfKXNKJn.jpeg"
-                            name='আবু হেনা মোরশেদ জামান' position='সভাপতি' shortDescription="সভাপতি, গভর্নিং বডি
-ও
- সচিব
-বাস্তবায়ন পরিবীক্ষণ ও মূল্যায়ন বিভাগ (আইএমইডি), পরিকল্পনা মন্ত্রণালয়।"
+                            <HomeCard
+                                imageSrc="https://d3or5urpu0oqw6.cloudfront.net/images/message_images/y8K0bkDf9kFXNdMmIRDOavMRxAaAGXfrOfKXNKJn.jpeg"
+                                name='বেগম ফেরদৌসী আরিফ' position='সভাপতি' shortDescription="সভাপতি, ম্যানেজিং কমিটি"
                             />
                         </Grid>
                         <Grid item xs={12} md={4}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
-                            <HomeCard imageSrc="https://d3or5urpu0oqw6.cloudfront.net/images/message_images/9pz6Bcnurp2NSuE3JFe4mFySky959ildj88XYNRv.jpeg"
-                            name="ফাওজিয়া রাশেদী" position='অধ্যক্ষ' shortDescription='অধ্যক্ষ
-আইডিয়াল স্কুল অ্যান্ড কলেজ'
+                            <HomeCard
+                                imageSrc={ABUL_KALAM_HUJUR}
+                                name="মো: আবুল কালাম আজাদ" position='সুপার'
+                                shortDescription={"সুপার" + "\n" + "আবু তাহের দাখেলিয়া মাদ্রাসা"}
+                                // shortDescription="<p>সুপার <br>আবু তাহের দাখেলিয়া মাদ্রাস</p>"
+                                // shortDescription="অধ্যক্ষ\n "ও\n" . "সদস্য সচিব, গভর্নিং বডি"
+
                             />
                         </Grid>
                         <Grid item xs={12} md={4}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
-                            <HomeCard imageSrc='https://iscm.edu.bd/images/mujibborso.png' name='' position='মুজিববর্ষ' shortDescription="শিক্ষা নিয়ে গড়ব দেশ
-শেখ হাসিনার বাংলাদেশ"/>
+                            <HomeCard imageSrc='https://iscm.edu.bd/images/mujibborso.png' name='মো: দবির উদ্দিন আকন'
+                                      position='অভিভাবক সদস্য'
+                                // shortDescription="শিক্ষা নিয়ে গড়ব দেশশেখ হাসিনার বাংলাদেশ"
+                            />
                         </Grid>
                     </Grid>
                 </Box>
@@ -59,7 +65,8 @@ export default function Home() {
                             }}>Academic Calender</Typography>
                         </Grid>
 
-                        <Grid item xs={12} md={8} style={{background: '#eaeaea'
+                        <Grid item xs={12} md={8} style={{
+                            background: '#eaeaea'
                         }}>
                             <Calender/>
                         </Grid>
@@ -67,14 +74,13 @@ export default function Home() {
 
                 </Box>
                 <Box>
-                    <PhotoGallery />
+                    <PhotoGallery/>
                 </Box>
                 {/*<Box >*/}
                 {/*    <Map location={location}/>*/}
                 {/*</Box>*/}
-                <Footer/>
 
             </main>
-        </div>
+        </>
     );
 }

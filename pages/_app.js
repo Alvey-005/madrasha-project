@@ -11,6 +11,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import Layout from "../components/layout";
 
 // Client-side cache shared for the whole session 
 // of the user in the browser.
@@ -34,7 +35,9 @@ export default function MyApp(props) {
                 build upon. */}
 
           <CssBaseline />
-          <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </ThemeProvider>
       </CacheProvider>
   );
