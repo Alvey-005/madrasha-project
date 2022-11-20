@@ -27,13 +27,13 @@ const drawerWidth = 240;
 // const navItems = ['Home', 'About', 'Contact', 'Help', 'Notice', 'Governing-body', 'Teacher', 'Student'];
 
 const navItems = [
-    {id: 1, name: "Home", link: "/"},
+    {id: 1, name: "হোম", link: "/"},
     // {id: 2, name: "About", link: "about-us"},
     {id: 2, name: "ইতিহাস", link: "history"},
     // {id: 3, name: "Contact", link: "contact"},
     {id: 4, name: "সভাপতির বাণী", link: "principal-lecture"},
     {id: 9, name: "প্রতিষ্ঠান প্রধানের বাণী", link: "president-talk"},
-    {id: 5, name: "Notice", link: "notice"},
+    {id: 5, name: "নোটিশ", link: "all-notices"},
     {id: 6, name: "ম্যানেজিং কমিটি", link: "governing-body"},
     {id: 7, name: "শিক্ষক", link: "teachers"},
     {id: 8, name: "শিক্ষার্থী", link: "students"},
@@ -78,13 +78,10 @@ const Header = (props) => {
     );
     const container = window !== undefined ? () => window().document.body : undefined;
     useEffect(() => {
-        fetch('/api/notice')
+        fetch('/api/all-notices')
             .then((res) => res.json())
             .then((data) => {
-                if(Object.keys(data).find((key)=>key==='data')){
-                }else{
                     setNotices(data);
-                }
             })
     }, [])
     return (
@@ -166,9 +163,14 @@ const Header = (props) => {
                 </Box>
                 <Box sx={{background: "white"}}>
                     <Marquee speed={40}>
+                        {/*{*/}
+                        {/*    Object.keys(notices)?.map((key,index)=>(*/}
+                        {/*        <Link key={notices[key].id} href={notices[key].slug}><a style={{color: 'red', margin: "0 1rem"}}> {notices[key].title}</a></Link>*/}
+                        {/*    ))*/}
+                        {/*}*/}
                         {
-                            Object.keys(notices)?.map((key,index)=>(
-                                <Link key={notices[key].id} href={notices[key].slug}><a style={{color: 'red', margin: "0 1rem"}}> {notices[key].title}</a></Link>
+                            notices?.map(notice=>(
+                                        <Link key={notice._id} href={'notice/'+notice.slug}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
                             ))
                         }
 
