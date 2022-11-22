@@ -1,4 +1,9 @@
 import  ABUL_KALAM_HUJUR from "../../public/images/ABUL KALAM HUJUR.jpg"
+import  Dobir from "../../public/images/dobir_uddin.jpeg"
+import  Faruk from "../../public/images/faruk_ahmed.jpeg"
+import  Mahmud from "../../public/images/mahmudul.jpeg"
+import  ARahman from "../../public/images/a.rahman.jpeg"
+import Azizul from "../../public/images/ajijul_molla.jpeg"
 export const governData = [
     {
         id: 2,
@@ -11,21 +16,21 @@ export const governData = [
     },
     {
         id: 3,
-        imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/WyY1kc84KulXATrjIQxa2WbjyI2vzd0ZTiBUN7Zm.jpg",
+        imageSrc: Dobir,
         name: "মো: দবির উদ্দিন আকন",
         position: "অভিভাবক সদস্য",
         // shortDescription: "জেলা প্রশাসক, ঢাকা জেলা"
     },
     {
         id: 4,
-        imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/ZJQxOlh3N7jnIh8FV1VX6uaYYD7eKD3iazuVt3TC.jpg",
+        imageSrc: Faruk,
         name: "মো: ফারুক আহমেদ",
         position: "অভিভাবক সদস্য",
         // shortDescription: "শিক্ষক"
     },
     {
         id: 5,
-        imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/C5tmVq3vjN5JcaY0e5FqSx9gVF5vN8wvii89ELOi.jpg",
+        imageSrc: Azizul,
         name: "মো: আজিজুল হক",
         position: "অভিভাবক সদস্য",
         // shortDescription: "অধ্যাপক"
@@ -39,14 +44,14 @@ export const governData = [
     },
     {
         id: 7,
-        imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/1UrGPF3Zh4PrCvSVPsKY4pRTgQxuBxNNZsX7xccp.jpg",
+        imageSrc: Mahmud,
         name: "মো: মাহমুদুল হাসান",
         position: "সাধারণ শিক্ষক সদস্য",
         shortDescription: ""
     },
     {
         id: 8,
-        imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/1UrGPF3Zh4PrCvSVPsKY4pRTgQxuBxNNZsX7xccp.jpg",
+        imageSrc: ARahman,
         name: "আব্দুর রহমান",
         position: "সাধারণ শিক্ষক সদস্য",
         shortDescription: ""

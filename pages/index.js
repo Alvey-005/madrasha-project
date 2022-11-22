@@ -1,7 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SimpleSlider from "../components/slider";
@@ -11,6 +8,7 @@ import Calender from "../components/Calender";
 import PhotoGallery from "../components/PhotoGallery";
 // import  ABUL_KALAM_HUJUR from "../assets/img/ABUL_KALAM_HUJUR.webp"
 import ABUL_KALAM_HUJUR from "../public/images/ABUL KALAM HUJUR.jpg"
+import Dobir from "../public/images/dobir_uddin.jpeg";
 
 export default function Home() {
     return (
@@ -47,7 +45,7 @@ export default function Home() {
                         </Grid>
                         <Grid item xs={12} md={4}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
-                            <HomeCard imageSrc='https://iscm.edu.bd/images/mujibborso.png' name='মো: দবির উদ্দিন আকন'
+                            <HomeCard imageSrc={Dobir} name='মো: দবির উদ্দিন আকন'
                                       position='অভিভাবক সদস্য'
                                 // shortDescription="শিক্ষা নিয়ে গড়ব দেশশেখ হাসিনার বাংলাদেশ"
                             />
