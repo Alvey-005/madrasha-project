@@ -4,7 +4,6 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import {Box} from "@mui/material";
-import { Document, Page, pdfjs } from "react-pdf";
 import {useState} from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
