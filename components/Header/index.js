@@ -22,6 +22,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import PropTypes from 'prop-types';
 import {useTheme} from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {useRouter} from "next/router";
 
 const drawerWidth = 240;
 // const navItems = ['Home', 'About', 'Contact', 'Help', 'Notice', 'Governing-body', 'Teacher', 'Student'];
@@ -46,7 +47,7 @@ const homeData = {
     slogan: "শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
 }
 const Header = (props) => {
-
+    const router = useRouter()
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up('sm'));
     const {window} = props;
@@ -66,7 +67,7 @@ const Header = (props) => {
                     <ListItem key={item.id} disablePadding>
                         <ListItemButton sx={{textAlign: 'center'}}>
                             <ListItemText>
-                                <Link href={item.link}>
+                                <Link href={"/"+item.link}>
                                     <a style={{color: 'black'}}>{item.name}</a>
                                 </Link>
                             </ListItemText>
@@ -83,6 +84,18 @@ const Header = (props) => {
             .then((data) => {
                     setNotices(data);
             })
+    }, [])
+    useEffect(() => {
+        const handleRouteChange = (url) => {
+            setMobileOpen(false);
+        }
+        router.events.on('routeChangeComplete', handleRouteChange)
+
+        // If the component is unmounted, unsubscribe
+        // from the event with the `off` method:
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange)
+        }
     }, [])
     return (
         <header>
@@ -139,7 +152,7 @@ const Header = (props) => {
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
                             <Button key={item.id} sx={{color: '#fff'}}>
-                                <Link href={item.link}><a style={{color: '#fff'}}>{item.name}</a></Link>
+                                <Link href={"/"+item.link}><a style={{color: '#fff'}}>{item.name}</a></Link>
                             </Button>
                         ))}
                     </Box>
@@ -170,7 +183,7 @@ const Header = (props) => {
                         {/*}*/}
                         {
                             notices?.map(notice=>(
-                                        <Link key={notice._id} href={'notice/'+notice.slug}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
+                                        <Link key={notice.id} href={'notice/'+notice.slug}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
                             ))
                         }
 

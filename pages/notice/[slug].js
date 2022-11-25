@@ -2,18 +2,20 @@ import {useRouter} from 'next/router'
 import {useEffect, useState} from "react";
 import {Typography} from "@mui/material";
 import React from "react";
+import ShowPdf from "../../components/ShowPdf";
 
 const Notice = () => {
     const router = useRouter()
     const {slug} = router.query
-    console.log(slug);
     const [notice, setNotice] = useState({});
     useEffect(() => {
-        return () => {
-            fetch('/api/single-notice/' + slug)
-                .then((res) => res.json()).then((res) => setNotice(res))
-        };
-    }, [notice,slug]);
+        if(slug!== undefined){
+            fetch('/api/single-notice/' + slug).then((res) => res.json()).then((res)=>setNotice(res));
+        }
+        return ()=>{
+            setNotice(null)
+        }
+    },[slug]);
 
     return (<>
         {notice?<>
@@ -22,9 +24,9 @@ const Notice = () => {
             }}>
                 {notice?.title}
             </Typography>
-        {notice.isPdf?"":<>
-            <img src={`./public/uploads/${notice?.fileName}`}/></>
-        }
+            {
+                <ShowPdf file={notice.url}/>
+            }
         </>:""}
         </>)
 }

@@ -72,7 +72,18 @@ export default function Home() {
 
                 </Box>
                 <Box>
-                    <PhotoGallery/>
+                    <Grid container>
+                        <Grid item xs={12} md={12}>
+                            <Typography variant='h3' style={{
+                                textAlign: 'center',
+                                backgroundColor: '#023020',
+                                color: 'white'
+                            }}>Gallery</Typography>
+                        </Grid>
+                        <Grid item>
+                            <PhotoGallery/>
+                        </Grid>
+                    </Grid>
                 </Box>
                 {/*<Box >*/}
                 {/*    <Map location={location}/>*/}

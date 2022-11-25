@@ -10,7 +10,8 @@ const AllNotices = () => {
     const data = {
         title: "All all-notices"
     }
-    return (// <div className={styles.container}>
+    return (
+        // <div className={styles.container}>
         //     <Header/>
         // <ShowPdf />
         // <Footer />
@@ -20,7 +21,7 @@ const AllNotices = () => {
                 textAlign: 'center', backgroundColor: '#023020', color: 'white', paddingTop: '1rem'
             }}>{data.title}</Typography>
             {notices?.map(notice=>(
-                <li key={notice._id}><Link  href={'notice/'+notice.slug}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link></li>
+                <li key={notice.id}><Link  href={'notice/'+notice.id}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link></li>
                 ))}
         </>
 
