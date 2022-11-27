@@ -183,7 +183,7 @@ const Header = (props) => {
                         {/*}*/}
                         {
                             notices?.map(notice=>(
-                                        <Link key={notice.id} href={'notice/'+notice.slug}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
+                                        <Link key={notice.id} href={'notice/'+notice.id}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
                             ))
                         }
 

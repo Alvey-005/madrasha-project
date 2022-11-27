@@ -12,14 +12,20 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import Layout from "../components/layout";
+import {AuthContextProvider} from "../context/AuthContext";
+import ProtectedRoute from "../components/ProtectedRoutes";
+import {useRouter} from "next/router";
 
 // Client-side cache shared for the whole session 
 // of the user in the browser.
+const authRequired = ['/admin/all-notice', '/admin/create-notice', '/admin/edit-notice']
 
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
-  const { Component, emotionCache =
+    const router = useRouter()
+
+    const { Component, emotionCache =
       clientSideEmotionCache, pageProps } = props;
 
   return (
@@ -28,7 +34,10 @@ export default function MyApp(props) {
           <meta name="viewport"
                 content="initial-scale=1, width=device-width" />
         </Head>
-        <ThemeProvider theme={theme}>
+          <AuthContextProvider>
+
+
+          <ThemeProvider theme={theme}>
 
           {/* CssBaseline kickstart an elegant,
                 consistent, and simple baseline to
@@ -36,9 +45,15 @@ export default function MyApp(props) {
 
           <CssBaseline />
             <Layout>
-                <Component {...pageProps} />
-            </Layout>
+                {!authRequired.includes(router.pathname) ? (
+                    <Component {...pageProps} />
+                ) : (
+                    <ProtectedRoute>
+                        <Component {...pageProps} />
+                    </ProtectedRoute>
+                )}            </Layout>
         </ThemeProvider>
+          </AuthContextProvider>
       </CacheProvider>
   );
 }

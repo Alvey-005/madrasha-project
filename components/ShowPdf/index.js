@@ -35,19 +35,19 @@ const ShowPdf = ({file})=>{
         //     </div>
         // </Worker>
         <Box sx={{display:"flex",justifyContent:"center",alignItems:"center" ,margin:"2rem auto"}}>
-            {/*<embed src={file} width="500" height="375"*/}
-            {/*       type="application/pdf" />*/}
+            <embed src={file} width="500" height="375"
+                   type="application/pdf" />
             {/*<Document file={file} onLoadSuccess={onDocumentLoadSuccess}>*/}
             {/*    <Page pageNumber={pageNumber} />*/}
             {/*</Document>*/}
-            <Card>
-                <CardMedia
-                    className="cardmedia"
-                    component="iframe"
-                    Height="1056px"
-                    src={file}
-                />
-            </Card>
+            {/*<Card>*/}
+            {/*    <CardMedia*/}
+            {/*        className="cardmedia"*/}
+            {/*        component="iframe"*/}
+            {/*        Height="1056px"*/}
+            {/*        src={file}*/}
+            {/*    />*/}
+            {/*</Card>*/}
         </Box>
 
     );

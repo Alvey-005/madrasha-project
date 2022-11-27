@@ -24,7 +24,15 @@ const Notice = () => {
             }}>
                 {notice?.title}
             </Typography>
+            <Typography gutterBottom variant='p' style={{
+                textAlign: 'center', color: 'black', paddingTop: '1rem',marginBottom:"2rem"
+            }}>
+                {notice?.description}
+            </Typography>
             {
+                 notice?.isPdf?<>
+                     <img src={notice.url} alt={notice.title}/>
+                     </>:
                 <ShowPdf file={notice.url}/>
             }
         </>:""}

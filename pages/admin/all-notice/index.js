@@ -8,10 +8,21 @@ import TableBody from "@mui/material/TableBody";
 import {useEffect, useState} from "react";
 import Link from "next/link";
 import {deleteDoc, doc} from "firebase/firestore";
-import {db, storage} from "../../../firebaseConfig";
+import {auth, db, storage} from "../../../firebaseConfig";
 import {ref, deleteObject} from "firebase/storage";
+import {useAuth} from "../../../context/AuthContext";
+import {signOut} from "firebase/auth";
+import router from "next/router";
 
 const AllNotice = () => {
+    const {user} = useAuth();
+    const handleSignOut = async () => {
+        signOut(auth).then(() => {
+            router.push('/');
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
     const handleDelete = async (id, fileName) => {
         const desertRef = ref(storage, fileName);
         let delFile = await deleteObject(desertRef);
@@ -25,6 +36,13 @@ const AllNotice = () => {
 
     return (
         <Box>
+            <Typography gutterBottom variant='h3' style={{
+                textAlign: 'center', backgroundColor: '#023020', color: 'white', paddingTop: '1rem'
+            }}>All Notice</Typography>
+            {
+                user?<Button variant='contained' onClick={handleSignOut}>Signout</Button>:null
+
+            }
             <TableContainer component={Paper} style={{width: "80%", margin: "1rem auto"}}>
                 {!notices.length ? <Link href={'/admin/create-notice'}><a
                         style={{display: "flex", justifyContent: "center", alignContent: 'center'}}>No notice found,add
