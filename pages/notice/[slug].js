@@ -31,9 +31,10 @@ const Notice = () => {
             </Typography></Box>
 
             {
-                notice?.isPdf ? <>
+                notice && notice.isPdf ==='false' ? <>
                         <Box
                             sx={{
+                                border : "1rem solid black",
                                 display: 'flex',
                                 justifyContent: "center",
                                 // marginLeft: 'auto',

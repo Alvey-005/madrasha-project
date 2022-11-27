@@ -157,7 +157,7 @@ const EditNotice = () => {
                         />
 
                         <FormControl>
-                            <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
+                            <FormLabel id="demo-controlled-radio-buttons-group">Document</FormLabel>
                             <RadioGroup
                                 row
                                 aria-labelledby="demo-controlled-radio-buttons-group"
