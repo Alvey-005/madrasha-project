@@ -3,7 +3,6 @@ import {useAuth} from '../../context/AuthContext'
 import {Button, TextField} from "@mui/material";
 import router from "next/router";
 import toast, { Toaster } from 'react-hot-toast';
-import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
     const {user, login} = useAuth()
