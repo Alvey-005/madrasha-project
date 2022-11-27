@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router'
 import {useEffect, useState} from "react";
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import React from "react";
 import ShowPdf from "../../components/ShowPdf";
 
@@ -9,33 +9,44 @@ const Notice = () => {
     const {slug} = router.query
     const [notice, setNotice] = useState({});
     useEffect(() => {
-        if(slug!== undefined){
-            fetch('/api/single-notice/' + slug).then((res) => res.json()).then((res)=>setNotice(res));
+        if (slug !== undefined) {
+            fetch('/api/single-notice/' + slug).then((res) => res.json()).then((res) => setNotice(res));
         }
-        return ()=>{
+        return () => {
             setNotice(null)
         }
-    },[slug]);
+    }, [slug]);
 
-    return (<>
-        {notice?<>
+    return (<Box sx={{marginBottom:"2rem"}}>
+        {notice ? <>
             <Typography gutterBottom variant='h3' style={{
                 textAlign: 'center', backgroundColor: '#023020', color: 'white', paddingTop: '1rem'
             }}>
                 {notice?.title}
             </Typography>
-            <Typography gutterBottom variant='p' style={{
-                textAlign: 'center', color: 'black', paddingTop: '1rem',marginBottom:"2rem"
+            <Box sx={{textAlign:"center"}}> <Typography gutterBottom variant='p' style={{
+                textAlign: 'center', color: 'black', paddingTop: '1rem', marginBottom: "2rem",fontSize:"2rem"
             }}>
                 {notice?.description}
-            </Typography>
+            </Typography></Box>
+
             {
-                 notice?.isPdf?<>
-                     <img src={notice.url} alt={notice.title}/>
-                     </>:
-                <ShowPdf file={notice.url}/>
+                notice?.isPdf ? <>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: "center",
+                                // marginLeft: 'auto',
+                                // marginRight: 'auto',
+                                objectFit: "contain"
+                            }}
+                        ><img style={{objectFit: "contain", width: "80%", margin: "0 auto",}} src={notice.url}
+                              alt={notice.title}/></Box>
+
+                    </> :
+                    <ShowPdf file={notice.url}/>
             }
-        </>:""}
-        </>)
+        </> : ""}
+    </Box>)
 }
 export default Notice;

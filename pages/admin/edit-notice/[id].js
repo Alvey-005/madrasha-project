@@ -1,4 +1,14 @@
-import {Box, Button, CircularProgress, TextField} from "@mui/material";
+import {
+    Box,
+    Button,
+    CircularProgress,
+    FormControl,
+    FormControlLabel,
+    FormLabel,
+    Radio,
+    RadioGroup,
+    TextField
+} from "@mui/material";
 import {useState, useEffect} from "react";
 import {deleteObject, getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 import {db, storage} from "../../../firebaseConfig";
@@ -14,6 +24,7 @@ const EditNotice = () => {
     const [file, setFile] = useState([]);
     const [fileName, setFileName] = useState(null);
     const [progresspercent, setProgresspercent] = useState(0);
+    const [isPdf,setIsPdf] = useState(true);
     const [loading, setLoading] = useState(false);
     const uploadFiles = async (file) => {
         if (!file) return;
@@ -34,13 +45,14 @@ const EditNotice = () => {
         // 👆 getDownloadURL returns a promise too, so... yay more await
 
     };
-    const updatePost = async (id,title, slug, description, downloadURL=null) => {
+    const updatePost = async (id,title, slug, description, isPdf,downloadURL=null) => {
         try {
             const docRef = await doc(db, "notice", id);
             let data = {
                 title: title,
                 slug: slug,
-                description: description
+                description: description,
+                isPdf:isPdf
             };
             if (downloadURL) {
                 data = {
@@ -62,6 +74,7 @@ const EditNotice = () => {
                 setSlug(res.slug);
                 setDescription(res.description);
                 setFileName(res.fileName)
+                setIsPdf(res.isPdf)
             });
         }
         return () => {
@@ -75,10 +88,10 @@ const EditNotice = () => {
             const desertRef = ref(storage, fileName);
             let delFile = await deleteObject(desertRef);
             let downloadURL = await uploadFiles(file);
-             notice = await updatePost(id,title, slug, description, downloadURL);
+             notice = await updatePost(id,title, slug, description, isPdf,downloadURL);
         }
         else{
-             notice = await updatePost(id,title, slug, description);
+             notice = await updatePost(id,title, slug, isPdf,description);
         }
         if (notice) {
             // setTitle("");
@@ -142,6 +155,22 @@ const EditNotice = () => {
                                 setDescription(e.target.value);
                             }}
                         />
+
+                        <FormControl>
+                            <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-controlled-radio-buttons-group"
+                                name="controlled-radio-buttons-group"
+                                value={isPdf}
+                                onChange={(event)=>{
+                                    setIsPdf(event.target.value);
+                                }}
+                            >
+                                <FormControlLabel value={true} control={<Radio />} label="PDF" />
+                                <FormControlLabel value={false} control={<Radio />} label="IMAGE" />
+                            </RadioGroup>
+                        </FormControl>
                         <Button
                             variant="contained"
                             component="label"
