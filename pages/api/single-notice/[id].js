@@ -1,4 +1,3 @@
-import clientPromise from "../../../lib/mongodb";
 import {db, storage} from "../../../firebaseConfig";
 import {doc,getDoc, deleteDoc} from "firebase/firestore";
 export default async function handler(req, res) {

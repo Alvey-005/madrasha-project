@@ -1,5 +1,5 @@
 import {  db } from '../../firebaseConfig';
-import { collection, addDoc ,getDocs} from 'firebase/firestore';
+import { collection ,getDocs} from 'firebase/firestore';
 export default async function handler(req, res) {
     // const client = await clientPromise;
     // const db = client.db("notices");
