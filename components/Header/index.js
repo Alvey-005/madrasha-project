@@ -14,7 +14,9 @@ import {
 import Image from 'next/image'
 import MdPhone from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
-import logo1 from '../../public/images/logo1.jpg'
+// import logo1 from '../../public/images/logo1.jpg'
+import logo2 from '../../public/images/logo1.jpg'
+// import logo2 from "../../public/images/madrasha.webp";
 import Marquee from "react-fast-marquee";
 import Link from 'next/link'
 import Divider from "@mui/material/Divider";
@@ -36,12 +38,12 @@ const navItems = [
     {id: 9, name: "প্রতিষ্ঠান প্রধানের বাণী", link: "president-talk"},
     {id: 5, name: "নোটিশ", link: "all-notices"},
     {id: 6, name: "ম্যানেজিং কমিটি", link: "governing-body"},
-    {id: 7, name: "শিক্ষক", link: "teachers"},
+    {id: 7, name: "শিক্ষক ও কর্মচারি", link: "teachers"},
     {id: 8, name: "শিক্ষার্থী", link: "students"},
 ]
 const homeData = {
     name: "Abu Taher Dakhil Madrasah",
-    banglaName: "আবু তাহের দাখেলিয়া মাদ্রাসা",
+    banglaName: "আবু তাহের দাখিল মাদ্রাসা",
     email: "m110874ict@gmail.com",
     phone: "01309110874",
     slogan: "শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
@@ -67,7 +69,7 @@ const Header = (props) => {
                     <ListItem key={item.id} disablePadding>
                         <ListItemButton sx={{textAlign: 'center'}}>
                             <ListItemText>
-                                <Link href={"/"+item.link}>
+                                <Link href={"/" + item.link}>
                                     <a style={{color: 'black'}}>{item.name}</a>
                                 </Link>
                             </ListItemText>
@@ -82,7 +84,7 @@ const Header = (props) => {
         fetch('/api/all-notices')
             .then((res) => res.json())
             .then((data) => {
-                    setNotices(data);
+                setNotices(data);
             })
     }, [])
     useEffect(() => {
@@ -119,15 +121,19 @@ const Header = (props) => {
                           direction="row"
                           justifyContent="center"
                           alignItems="center"
-                          alignContent="center">
+                          alignContent="center"
+                    >
                         {/*<Image src={logo1} alt='logo' height={200} width={200} />*/}
-                        <Avatar
-                            alt="Abu Taher "
-                            // src="../../public/images/logo1.jpg"
-                            sx={{width: 200, height: 200}}
-                        >
-                            <Image src={logo1} alt='logo' height={180} width={180}/>
-                        </Avatar>
+                        <Link href="/">
+                            <Avatar style={{backgroundColor:"white"}}
+                                alt="Abu Taher "
+                                // src="../../public/images/logo1.jpg"
+                                sx={{width: 200, height: 200}}
+                            >
+                                <Image src={logo2} alt='logo' height={180} width={180}/>
+                            </Avatar>
+                        </Link>
+
                         <Box sx={{m: '2rem'}}>
                             <Typography variant="h3" align='center'>{homeData.name}</Typography>
                             <Typography variant="h4" align='center'>{homeData.banglaName}
@@ -152,7 +158,7 @@ const Header = (props) => {
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
                             <Button key={item.id} sx={{color: '#fff'}}>
-                                <Link href={"/"+item.link}><a style={{color: '#fff'}}>{item.name}</a></Link>
+                                <Link href={"/" + item.link}><a style={{color: '#fff'}}>{item.name}</a></Link>
                             </Button>
                         ))}
                     </Box>
@@ -182,8 +188,9 @@ const Header = (props) => {
                         {/*    ))*/}
                         {/*}*/}
                         {
-                            notices?.map(notice=>(
-                                        <Link key={notice.id} href={'/notice/'+notice.id}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
+                            notices?.map(notice => (
+                                <Link key={notice.id} href={'/notice/' + notice.id}><a
+                                    style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
                             ))
                         }
 

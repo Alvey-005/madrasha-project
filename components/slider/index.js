@@ -18,7 +18,9 @@ const sliderData = [{
     id: "4", photoSrc: Gallary1.src, alt: ""
 }, {
     id: "5", photoSrc: Gallary2.src, alt: ""
-}, {id: "6", photoSrc: Gallary3.src, alt: ""}, // {id:"",photoSrc:"",alt:""},
+},
+    // {id: "6", photoSrc: Gallary3.src, alt: ""},
+    // {id:"",photoSrc:"",alt:""},
 ];
 const settings = {
     dots: true,
@@ -44,14 +46,14 @@ const settings = {
 };
 const PhotoSlider = () => {
     return (<Box margin="3rem">
-            <Slider {...settings}>
-                {sliderData.map((slide) => (<Box key={slide.id}>
-                        <img
-                            src={slide.photoSrc}
-                            height={200} width="100%" style={{objectFit: "contain"}}/>
-                    </Box>))}
-            </Slider>
-        </Box>);
+        <Slider {...settings}>
+            {sliderData.map((slide) => (<Box key={slide.id}>
+                <img
+                    src={slide.photoSrc}
+                    height={200} width="100%" style={{objectFit: "contain"}}/>
+            </Box>))}
+        </Slider>
+    </Box>);
 
 }
 

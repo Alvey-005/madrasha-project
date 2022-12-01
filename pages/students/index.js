@@ -28,7 +28,7 @@ const heading=[
     {id:'male',name:"ছাত্র"},
     {id:'female',name:"ছাত্রী"},
     {id:'total',name:"মোট"},
-    {id:'comment',name:"মন্তব্য"},
+    // {id:'comment',name:"মন্তব্য"},
 ]
 const Students = () => {
     const theme = useTheme();

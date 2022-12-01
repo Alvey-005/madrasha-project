@@ -4,6 +4,8 @@ import Slick3 from "../../public/images/slick_3.jpeg";
 import Gallary1 from "../../public/images/galary_1.jpeg";
 import Gallary2 from "../../public/images/galary_2.jpeg";
 import Gallary3 from "../../public/images/galary_3.jpeg";
+import Gallary5 from "../../public/images/gallery_5.jpeg";
+import Gallary6 from "../../public/images/gallery_6.jpeg";
 export const photos = [
     {
         src: Slick1.src,
@@ -31,23 +33,23 @@ export const photos = [
         height: 4
     },
     {
-        src: "https://d3or5urpu0oqw6.cloudfront.net/images/gallery/aLRBLpHhsvgClqxpKIwo4taElCy4q34ucN0CArOI.png",
-        width: 4,
+        src: Gallary3.src,
+        width: 3,
         height: 3
     },
     {
-        src: "https://d3or5urpu0oqw6.cloudfront.net/images/gallery/t5FWNB31Np3Q1el4T7FwrUP4AyFAOuYEp3yCCjP6.png",
+        src: Gallary2.src,
         width: 3,
         height: 4
     },
     {
-        src: "https://d3or5urpu0oqw6.cloudfront.net/images/gallery/BKeFdSEeRi0g5W8t9G7CoqaacitKiQZAaF6ImV5X.png",
+        src: Gallary5.src,
         width: 4,
         height: 3
     },
     {
-        src: "https://d3or5urpu0oqw6.cloudfront.net/images/gallery/UoXGHHfP3GTmehfXlqp45ByY9t2TV1Fp0aPNq12v.png",
-        width: 4,
+        src: Gallary6.src,
+        width: 2,
         height: 3
     }
 ];

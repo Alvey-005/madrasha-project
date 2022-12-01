@@ -9,6 +9,9 @@ import PhotoGallery from "../components/PhotoGallery";
 // import  ABUL_KALAM_HUJUR from "../assets/img/ABUL_KALAM_HUJUR.webp"
 import ABUL_KALAM_HUJUR from "../public/images/ABUL KALAM HUJUR.jpg"
 import Dobir from "../public/images/dobir_uddin.jpeg";
+import ferdushi_arif from "../public/images/ferdushi_arif-2.png";
+import mujib from "../public/images/Mujib_100_Logo.png";
+
 
 export default function Home() {
     return (
@@ -28,7 +31,7 @@ export default function Home() {
                         <Grid item xs={12} md={4}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
                             <HomeCard
-                                imageSrc="https://d3or5urpu0oqw6.cloudfront.net/images/message_images/y8K0bkDf9kFXNdMmIRDOavMRxAaAGXfrOfKXNKJn.jpeg"
+                                imageSrc={ferdushi_arif}
                                 name='বেগম ফেরদৌসী আরিফ' position='সভাপতি' shortDescription="সভাপতি, ম্যানেজিং কমিটি"
                             />
                         </Grid>
@@ -45,9 +48,10 @@ export default function Home() {
                         </Grid>
                         <Grid item xs={12} md={4}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
-                            <HomeCard imageSrc={Dobir} name='মো: দবির উদ্দিন আকন'
-                                      position='অভিভাবক সদস্য'
-                                // shortDescription="শিক্ষা নিয়ে গড়ব দেশশেখ হাসিনার বাংলাদেশ"
+                            <HomeCard imageSrc={mujib}
+                                      // name='মো: দবির উদ্দিন আকন'
+                                      position='মুজিববর্ষ'
+                                name="শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
                             />
                         </Grid>
                     </Grid>

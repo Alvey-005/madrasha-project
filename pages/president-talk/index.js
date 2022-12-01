@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Home.module.css";
 import Image from 'next/image'
-import Profile from '../../public/images/img_avatar.png';
+import Profile from '../../public/images/ABUL KALAM HUJUR.webp';
 
 const PrincipalLecture = () => {
     const data = {

@@ -34,7 +34,7 @@ const heading=[
     {id:'name',name:"শিক্ষক ও কর্মচারিদের নাম"},
     {id:'position',name:"পদবী ও বিষয়"},
     {id:'contact',name:"যোগাযোগ"},
-    {id:'comment',name:"মন্তব্য"},
+    // {id:'comment',name:"মন্তব্য"},
 ]
 const Teachers = () => {
     const theme = useTheme();

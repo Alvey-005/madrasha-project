@@ -2,40 +2,41 @@ import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import Link from "next/link";
 const usefulLinks = [
-    {id:1,name:"Main Home",link:"/"},
-    {id:2,name:"Education Board",link:"http://www.educationboard.gov.bd/"},
-    {id:3,name:"শিক্ষক বাতায়ন",link:"https://www.teachers.gov.bd/"},
-    {id:4,name:"শিক্ষা মন্ত্রণালয়-গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",link:"https://www.teachers.gov.bd/"},
+    {id:1,name:"হোম",link:"/"},
+    {id:2,name:"শিক্ষা বোর্ড ",link:"http://www.educationboard.gov.bd/"},
+    {id:5,name:"বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ড",link:"http://www.bmeb.gov.bd/"},
+    // {id:3,name:"শিক্ষক বাতায়ন",link:"https://www.teachers.gov.bd/"},
+    {id:4,name:"শিক্ষা মন্ত্রণালয়-গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",link:"http://www.moedu.gov.bd/"},
 ]
 export default function Footer() {
     return (
         <MDBFooter style={{backgroundColor : '#023020', color:'white' ,width:'100%'}}  className='text-center text-lg-start'>
-            <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-                <div className='me-5 d-none d-lg-block'>
-                    <span>Get connected with us on social networks:</span>
-                </div>
+            {/*<section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>*/}
+            {/*    <div className='me-5 d-none d-lg-block'>*/}
+            {/*        <span>Get connected with us on social networks:</span>*/}
+            {/*    </div>*/}
 
-                <div>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="facebook-f" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="twitter" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="google" />
-                    </a>
-                    <a href='' className='me-4 text-reset'>
-                        <MDBIcon fab icon="linkedin" />
-                    </a>
-                </div>
-            </section>
+            {/*    <div>*/}
+            {/*        <a href='' className='me-4 text-reset'>*/}
+            {/*            <MDBIcon fab icon="facebook-f" />*/}
+            {/*        </a>*/}
+            {/*        <a href='' className='me-4 text-reset'>*/}
+            {/*            <MDBIcon fab icon="twitter" />*/}
+            {/*        </a>*/}
+            {/*        <a href='' className='me-4 text-reset'>*/}
+            {/*            <MDBIcon fab icon="google" />*/}
+            {/*        </a>*/}
+            {/*        <a href='' className='me-4 text-reset'>*/}
+            {/*            <MDBIcon fab icon="linkedin" />*/}
+            {/*        </a>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
 
-            <section className=''>
-                <MDBContainer className='text-center text-md-start mt-5'>
+            <section className='d-flex justify-content-center justify-content-lg-between '>
+                <MDBContainer className='text-center text-md-start mt-3'>
                     <MDBRow className='mt-3'>
-                        <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>
+                        <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-2'>
+                            <h6 className='text-uppercase fw-bold mb-2'>
                                 <MDBIcon icon="gem" className="me-3" />
                                 Abu Taher Madrasha                            </h6>
                             {/*<p>*/}
@@ -68,12 +69,12 @@ export default function Footer() {
                         {/*    </p>*/}
                         {/*</MDBCol>*/}
 
-                        <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
+                        <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-2'>
+                            <h6 className='text-uppercase fw-bold mb-2'>Useful links</h6>
                             {usefulLinks?.map((item)=>
                                 (
                                     <p key={item.id}><Link href={item.link}>
-                                    <a  className='text-reset'>
+                                    <a  className='text-reset' target="_blank">
                                         {item.name}
                                     </a>
                                 </Link>
@@ -83,7 +84,7 @@ export default function Footer() {
                         </MDBCol>
 
                         <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
+                            <h6 className='text-uppercase fw-bold mb-2'>Contact</h6>
                             <p>
                                 <MDBIcon icon="home" className="me-2" />
                                 ডাকঘর: ভেন্নাতলা, উপজেলা: শিবচর, জেলা: মাদারীপুর।                             </p>
@@ -102,11 +103,11 @@ export default function Footer() {
             </section>
 
             <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                © 2022 Copyright :
-                <a className='text-reset fw-bold' href=''>
+                © 2022 Copyright -
+                <Link href="https://wetechbd.com/"><a className='text-reset fw-bold' target="_blank">
                     WeTech
-                </a>
-                & developed By Abu Hena Mustafa
+                </a></Link>
+
             </div>
         </MDBFooter>
     );

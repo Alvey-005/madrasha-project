@@ -1,9 +1,12 @@
 import  ABUL_KALAM_HUJUR from "../../public/images/ABUL KALAM HUJUR.jpg"
 import  Dobir from "../../public/images/dobir_uddin.jpeg"
-import  Faruk from "../../public/images/faruk_ahmed.jpeg"
+import  Nasir from "../../public/images/nasir_uddin.jpeg"
 import  Mahmud from "../../public/images/mahmudul.jpeg"
 import  ARahman from "../../public/images/a.rahman.jpeg"
 import Azizul from "../../public/images/ajijul_molla.jpeg"
+import faruk_Ahmed from "../../public/images/farruk_ahemd.jpeg"
+import nilu from "../../public/images/nasir_uddin_nilu.jpeg"
+import ferdushi_arif from "../../public/images/ferdushi_arif-2.png"
 export const governData = [
     {
         id: 2,
@@ -23,7 +26,7 @@ export const governData = [
     },
     {
         id: 4,
-        imageSrc: Faruk,
+        imageSrc: faruk_Ahmed,
         name: "মো: ফারুক আহমেদ",
         position: "অভিভাবক সদস্য",
         // shortDescription: "শিক্ষক"
@@ -37,8 +40,15 @@ export const governData = [
     },
     {
         id: 6,
-        imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/9hwTa4MoPZLufAoVQBpcbzhBPrPAkwtjfPZBqYOK.jpg",
-        name: "মো: নাসির উদ্দিন",
+        imageSrc: Nasir,
+        name: "মোহাম্মদ তারিকুল ইসলাম চৌধুরী",
+        position: "অভিভাবক সদস্য",
+        shortDescription: ""
+    },
+    {
+        id: 11,
+        imageSrc: nilu,
+        name: "মোঃ নাসির উদ্দিন (মিলু)",
         position: "অভিভাবক সদস্য",
         shortDescription: ""
     },
@@ -60,7 +70,7 @@ export const governData = [
 ]
 export const mainOne = {
     id: 1,
-    imageSrc: "https://d3or5urpu0oqw6.cloudfront.net/images/governing_body_images/wFQagj9fPKTLtV8QgCmRjw1OhfK3LWd2zZ98UMz5.jpg",
+    imageSrc: ferdushi_arif,
     name: "বেগম ফেরদৌসী আরিফ",
     position: "সভাপতি",
     shortDescription: "ম্যানেজিং কমিটি"

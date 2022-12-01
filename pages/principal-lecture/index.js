@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/Home.module.css";
 import Image from 'next/image'
 // import Profile from '../../public/images/profile.avif';
-import Profile from '../../public/images/img_avatar.png';
+import Profile from '../../public/images/ferdushi_arif-2.png';
 
 const PrincipalLecture = () => {
     const data = {

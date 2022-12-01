@@ -8,7 +8,7 @@ const AllNotices = () => {
         fetch('/api/all-notices').then((res) => res.json()).then((res)=>setNotices(res));
     },[])
     const data = {
-        title: "All all-notices"
+        title: "নোটিশ"
     }
     return (
         // <div className={styles.container}>
