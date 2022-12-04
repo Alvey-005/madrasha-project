@@ -38,7 +38,7 @@ export default function Footer() {
                         <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-2'>
                             <h6 className='text-uppercase fw-bold mb-2'>
                                 <MDBIcon icon="gem" className="me-3" />
-                                Abu Taher Madrasha                            </h6>
+                                আবু তাহের দাখিল মাদ্রাসা                           </h6>
                             {/*<p>*/}
                             {/*    Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,*/}
                             {/*    consectetur adipisicing elit.*/}
@@ -84,7 +84,7 @@ export default function Footer() {
                         </MDBCol>
 
                         <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-2'>Contact</h6>
+                            <h6 className='text-uppercase fw-bold mb-2'>ঠিকানা</h6>
                             <p>
                                 <MDBIcon icon="home" className="me-2" />
                                 ডাকঘর: ভেন্নাতলা, উপজেলা: শিবচর, জেলা: মাদারীপুর।                             </p>

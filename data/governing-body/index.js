@@ -48,7 +48,7 @@ export const governData = [
     {
         id: 11,
         imageSrc: nilu,
-        name: "মোঃ নাসির উদ্দিন (মিলু)",
+        name: "মোঃ নাসির উদ্দিন (নীলু)",
         position: "অভিভাবক সদস্য",
         shortDescription: ""
     },

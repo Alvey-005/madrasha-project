@@ -11,14 +11,15 @@ import ABUL_KALAM_HUJUR from "../public/images/ABUL KALAM HUJUR.jpg"
 import Dobir from "../public/images/dobir_uddin.jpeg";
 import ferdushi_arif from "../public/images/ferdushi_arif-2.png";
 import mujib from "../public/images/Mujib_100_Logo.png";
+import NoticeSlider from "../components/NoticeSlider";
 
 
 export default function Home() {
-    return (
-        <>
+    return (<>
             <Head>
                 <title>Home</title>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="shortcut icon"
+                      href="/static/favicon-16x16.png"/>
             </Head>
 
             <main>
@@ -35,7 +36,7 @@ export default function Home() {
                                 name='বেগম ফেরদৌসী আরিফ' position='সভাপতি' shortDescription="সভাপতি, ম্যানেজিং কমিটি"
                             />
                         </Grid>
-                        <Grid item xs={12} md={4}
+                        <Grid item xs={12} md={4} sm={6}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
                             <HomeCard
                                 imageSrc={ABUL_KALAM_HUJUR}
@@ -46,31 +47,37 @@ export default function Home() {
 
                             />
                         </Grid>
-                        <Grid item xs={12} md={4}
+                        <Grid item xs={12} md={4} sm={6}
                               style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
                             <HomeCard imageSrc={mujib}
-                                      // name='মো: দবির উদ্দিন আকন'
+                                // name='মো: দবির উদ্দিন আকন'
                                       position='মুজিববর্ষ'
-                                name="শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
+                                      name="শিক্ষা নিয়ে গড়ব দেশ শেখ হাসিনার বাংলাদেশ"
                             />
                         </Grid>
                     </Grid>
                 </Box>
                 <Box sx={{margin: '2rem'}}>
 
-                    <Grid container>
-                        <Grid item xs={12} md={8}>
-                            <Typography variant='h3' style={{
-                                textAlign: 'center',
-                                backgroundColor: '#023020',
-                                color: 'white'
-                            }}>Academic Calender</Typography>
-                        </Grid>
-
+                    <Grid container spacing={3}>
                         <Grid item xs={12} md={8} style={{
-                            background: '#eaeaea'
+                            // background: '#eaeaea'
+                            background: 'white'
                         }}>
-                            <Calender/>
+                            <Typography variant='h3' style={{
+                                textAlign: 'center', backgroundColor: '#023020', color: 'white'
+                            }}>Academic Calender</Typography>
+                            <Box>
+                                <Calender/>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12} md={4}>
+                            <Typography variant='h3' style={{
+                                textAlign: 'center', backgroundColor: '#023020', color: 'white'
+                            }}>Notice Board</Typography>
+                            <Box sx={{height:500 ,width:"100%"}}>
+                                <NoticeSlider />
+                            </Box>
                         </Grid>
                     </Grid>
 
@@ -79,9 +86,7 @@ export default function Home() {
                     <Grid container>
                         <Grid item xs={12} md={12}>
                             <Typography variant='h3' style={{
-                                textAlign: 'center',
-                                backgroundColor: '#023020',
-                                color: 'white'
+                                textAlign: 'center', backgroundColor: '#023020', color: 'white'
                             }}>Gallery</Typography>
                         </Grid>
                         <Grid item>
@@ -94,6 +99,5 @@ export default function Home() {
                 {/*</Box>*/}
 
             </main>
-        </>
-    );
+        </>);
 }

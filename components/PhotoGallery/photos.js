@@ -1,14 +1,22 @@
-import Slick1 from "../../public/images/slick_1.jpeg";
-import Slick2 from "../../public/images/slick_2.jpeg";
-import Slick3 from "../../public/images/slick_3.jpeg";
-import Gallary1 from "../../public/images/galary_1.jpeg";
-import Gallary2 from "../../public/images/galary_2.jpeg";
-import Gallary3 from "../../public/images/galary_3.jpeg";
-import Gallary5 from "../../public/images/gallery_5.jpeg";
-import Gallary6 from "../../public/images/gallery_6.jpeg";
+// import Slick1 from "../../public/images/slick_1.jpeg";
+// import Slick2 from "../../public/images/slick_2.jpeg";
+// import Slick3 from "../../public/images/slick_3.jpeg";
+// import Gallary1 from "../../public/images/galary_1.jpeg";
+// import Gallary2 from "../../public/images/galary_2.jpeg";
+// import Gallary3 from "../../public/images/galary_3.jpeg";
+// import Gallary5 from "../../public/images/gallery_5.jpeg";
+// import Gallary6 from "../../public/images/gallery_6.jpeg";
+import GalaryPhoto1 from "../../public/images/galaryPhoto1.jpeg";
+import GalaryPhoto2 from "../../public/images/galaryPhoto2.jpeg";
+import GalaryPhoto3 from "../../public/images/galaryPhoto3.jpeg";
+import GalaryPhoto4 from "../../public/images/galaryPhoto4.jpeg";
+import GalaryPhoto5 from "../../public/images/galaryPhoto5.jpeg";
+import GalaryPhoto6 from "../../public/images/galaryPhoto6.jpeg";
+import GalaryPhoto7 from "../../public/images/galaryPhoto7.jpeg";
+import GalaryPhoto8 from "../../public/images/galaryPhoto8.jpeg";
 export const photos = [
     {
-        src: Slick1.src,
+        src: GalaryPhoto1.src,
         width: 4,
         height: 3
     },
@@ -18,38 +26,38 @@ export const photos = [
     //     height: 1
     // },
     {
-        src: Slick2.src,
-        width: 3,
-        height: 4
-    },
-    {
-        src: Slick3.src,
-        width: 3,
-        height: 4
-    },
-    {
-        src: Gallary1.src,
-        width: 5,
-        height: 4
-    },
-    {
-        src: Gallary3.src,
-        width: 3,
-        height: 3
-    },
-    {
-        src: Gallary2.src,
-        width: 3,
-        height: 4
-    },
-    {
-        src: Gallary5.src,
+        src: GalaryPhoto2.src,
         width: 4,
         height: 3
     },
     {
-        src: Gallary6.src,
-        width: 2,
+        src: GalaryPhoto3.src,
+        width: 4,
+        height: 3
+    },
+    {
+        src: GalaryPhoto4.src,
+        width: 4,
+        height: 3
+    },
+    {
+        src: GalaryPhoto5.src,
+        width: 4,
+        height: 3
+    },
+    {
+        src: GalaryPhoto6.src,
+        width: 4,
+        height: 3
+    },
+    {
+        src: GalaryPhoto7.src,
+        width: 4,
+        height: 3
+    },
+    {
+        src: GalaryPhoto8.src,
+        width: 4,
         height: 3
     }
 ];

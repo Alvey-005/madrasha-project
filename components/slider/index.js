@@ -7,6 +7,7 @@ import Slick3 from "../../public/images/slick_3.jpeg";
 import Gallary1 from "../../public/images/galary_1.jpeg";
 import Gallary2 from "../../public/images/galary_2.jpeg";
 import Gallary3 from "../../public/images/galary_3.jpeg";
+import slick5 from "../../public/images/slick5.jpeg";
 
 const sliderData = [{
     id: "1", photoSrc: Slick1.src, alt: ""
@@ -19,7 +20,7 @@ const sliderData = [{
 }, {
     id: "5", photoSrc: Gallary2.src, alt: ""
 },
-    // {id: "6", photoSrc: Gallary3.src, alt: ""},
+    {id: "6", photoSrc: slick5.src, alt: ""},
     // {id:"",photoSrc:"",alt:""},
 ];
 const settings = {
@@ -47,10 +48,11 @@ const settings = {
 const PhotoSlider = () => {
     return (<Box margin="3rem">
         <Slider {...settings}>
-            {sliderData.map((slide) => (<Box key={slide.id}>
+            {sliderData.map((slide) => (
+                <Box key={slide.id}>
                 <img
                     src={slide.photoSrc}
-                    height={200} width="100%" style={{objectFit: "contain"}}/>
+                    height={300} width="90%" style={{objectFit: "cover"}}/>
             </Box>))}
         </Slider>
     </Box>);

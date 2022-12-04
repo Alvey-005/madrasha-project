@@ -17,7 +17,8 @@ import EmailIcon from '@mui/icons-material/Email';
 // import logo1 from '../../public/images/logo1.jpg'
 import logo2 from '../../public/images/logo1.jpg'
 // import logo2 from "../../public/images/madrasha.webp";
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
+import Marquee from "react-easy-marquee";
 import Link from 'next/link'
 import Divider from "@mui/material/Divider";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -108,9 +109,7 @@ const Header = (props) => {
                             <p style={{textAlign: 'center'}}>{homeData.slogan}</p>
                         </Grid>
                         <Grid item xs={12} md={4}>
-                            <p style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}><MdPhone/> Call
-                                Us
-                                at: {homeData.phone}</p>
+                            <p style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}><MdPhone/> যোগাযোগ করুন: {homeData.phone}</p>
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <p style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
@@ -181,7 +180,14 @@ const Header = (props) => {
                     </Drawer>
                 </Box>
                 <Box sx={{background: "white"}}>
-                    <Marquee speed={40}>
+                    <Marquee   duration={20000}
+                               // background="#00DEFB"
+                               height="2rem"
+                               width="100%"
+                               axis="x"
+                               // align="center"
+                               pauseOnHover={true}
+                    >
                         {/*{*/}
                         {/*    Object.keys(notices)?.map((key,index)=>(*/}
                         {/*        <Link key={notices[key].id} href={notices[key].slug}><a style={{color: 'red', margin: "0 1rem"}}> {notices[key].title}</a></Link>*/}
@@ -190,7 +196,7 @@ const Header = (props) => {
                         {
                             notices?.map(notice => (
                                 <Link key={notice.id} href={'/notice/' + notice.id}><a
-                                    style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link>
+                                    style={{color: '#023020', margin: "0 1rem"}}> {notice.title}</a></Link>
                             ))
                         }
 

@@ -1,4 +1,4 @@
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import React,{useEffect,useState} from "react";
 import Link from "next/link";
 
@@ -20,9 +20,11 @@ const AllNotices = () => {
             <Typography gutterBottom variant='h3' style={{
                 textAlign: 'center', backgroundColor: '#023020', color: 'white', paddingTop: '1rem'
             }}>{data.title}</Typography>
+            <Box sx={{margin:"2rem"}}>
             {notices?.map(notice=>(
-                <li key={notice.id}><Link  href={'notice/'+notice.id}><a style={{color: 'red', margin: "0 1rem"}}> {notice.title}</a></Link></li>
+                <li key={notice.id}><Link  href={'notice/'+notice.id}><a style={{color: '#023020', margin: "0 1rem" ,fontSize:20}}> {notice.title}</a></Link></li>
                 ))}
+            </Box>
         </>
 
     )
